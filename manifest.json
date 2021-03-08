@@ -1,0 +1,6 @@
+{
+    "name": "Senior Rejuvenator",
+    "description": "Uma extensão do Chrome que tenta rejuvenescer o Senior.",
+    "version": "0.1",
+    "manifest_version": 3
+}
