@@ -1,5 +1,3 @@
-let isMenuLoaded = false;
-
 const menuFrame = parent.document.querySelector('[name=MENU]');
 
 setTimeout(function () {
@@ -16,7 +14,15 @@ function getAreas() {
         console.log(area.getAttribute('href'))
         const href = area.getAttribute('href');
         if (href.includes('javascript:clickOnNode')) {
-            area.parentNode.nextSibling.querySelector('a').setAttribute('href', href);
+            const label = area.parentNode.nextSibling.querySelector('a');
+            label.setAttribute('href', href);
+
         }
-    })
+    });
+
+    const hiddenItems = menuFrame.contentDocument.querySelectorAll('table');
+    hiddenItems.forEach((item) => {
+        item.style.display = 'block';
+    });
+
 }
