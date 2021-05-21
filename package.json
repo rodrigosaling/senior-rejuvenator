@@ -1,0 +1,24 @@
+{
+  "name": "senior-rejuvenator",
+  "version": "0.1.0",
+  "description": "Um plugin do Chrome para rejuvenescer o Senior.",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigosaling/senior-rejuvenator.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "senior"
+  ],
+  "author": "Rodrigo Saling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rodrigosaling/senior-rejuvenator/issues"
+  },
+  "homepage": "https://github.com/rodrigosaling/senior-rejuvenator#readme"
+}
