@@ -1,22 +1,21 @@
 {
-    "name": "Senior Rejuvenator",
-    "description": "Uma extensão do Chrome que tenta rejuvenescer o Senior.",
-    "version": "0.1",
-    "manifest_version": 3,
-    "background": {
-        "service_worker": "background.js"
-    },
-    "permissions": ["storage", "activeTab", "scripting"],
-    "action": {
-        "default_popup": "popup.html"
-    },
-    "options_page": "options.html",
-    "content_scripts": [
-        {
-            "matches": ["https://*.senior.com.br/*"],
-            "run_at": "document_idle",
-            "js": ["contentScript.js"]
-        }
-    ]
+  "name": "Senior Rejuvenator",
+  "description": "Uma extensão do Chrome que tenta rejuvenescer o Senior.",
+  "version": "0.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://*.senior.com.br/*"],
+      "run_at": "document_idle",
+      "js": ["contentScript.js"]
+    }
+  ]
 }
-
