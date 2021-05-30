@@ -61,6 +61,7 @@ function fillInputsWithDateAndTime() {
   }
 }
 
+// Este é o botão que fica no popup
 const fillInputs = document.getElementById('fill-inputs');
 
 fillInputs.addEventListener('click', async () => {
