@@ -1,4 +1,4 @@
-# senior-rejuvenator
+# Senior Rejuvenator
 
 Uma extensão do Chrome que tenta rejuvenescer o Senior.
 
