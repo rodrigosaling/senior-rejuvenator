@@ -4,18 +4,18 @@
   "version": "0.1",
   "manifest_version": 3,
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/background.js"
   },
   "permissions": ["storage", "activeTab", "scripting"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "src/popup.html"
   },
-  "options_page": "options.html",
+  "options_page": "src/options.html",
   "content_scripts": [
     {
       "matches": ["https://*.senior.com.br/*"],
       "run_at": "document_idle",
-      "js": ["contentScript.js"]
+      "js": ["src/contentScript.js"]
     }
   ]
 }
