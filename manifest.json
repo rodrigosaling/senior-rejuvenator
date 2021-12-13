@@ -14,8 +14,19 @@
   "content_scripts": [
     {
       "matches": ["https://*.senior.com.br/*"],
+      "include_globs": ["*conector?ACAO=RHMONTAMENU&SIS=HR"],
+      "all_frames": true,
       "run_at": "document_idle",
-      "js": ["src/contentScript.js"]
+      "js": ["src/menu-lateral.js"]
+    },
+    {
+      "matches": ["https://*.senior.com.br/*"],
+      "include_globs": [
+        "*conector?ACAO=EXEACERTO&SIS=HR&STATUS=CARREGARACERTO*"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle",
+      "js": ["src/horas.js"]
     }
   ]
 }

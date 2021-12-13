@@ -11,8 +11,8 @@
 chrome.runtime.onMessage.addListener((message) => {
   if (message === 'runContentScript') {
     // eslint-disable-next-line no-undef
-    chrome.scripting.executeScript({
-      file: 'contentScript.js',
-    });
+    // chrome.scripting.executeScript({
+    //   file: 'contentScript.js',
+    // });
   }
 });

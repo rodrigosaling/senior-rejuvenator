@@ -1,40 +1,7 @@
-// eslint-disable-next-line no-restricted-globals
-
-// setTimeout(() => {
-//   console.log(menuFrame.contentDocument.querySelector('transstr').innerHTML);
-//   if (
-//     menuFrame.contentDocument.querySelector('transstr').innerHTML ===
-//     '<title>Ronda Web</title>'
-//   ) {
-//     getAreas();
-//   }
-// }, 1000);
-
-const abrirArvoreMenuLateral = () => {
-  const menuFrame = document.querySelector('[name=MENU]');
-  const areas = menuFrame.contentDocument.querySelectorAll('.area') ?? [];
-
-  areas.forEach((area) => {
-    const href = area.getAttribute('href');
-    // eslint-disable-next-line no-script-url
-    if (href.includes('javascript:clickOnNode')) {
-      const label = area.parentNode.nextSibling.querySelector('a');
-      label.setAttribute('href', href);
-    }
-  });
-
-  const hiddenItems =
-    menuFrame?.contentDocument.querySelectorAll('table') ?? [];
-  hiddenItems.forEach((item) => {
-    // eslint-disable-next-line no-param-reassign
-    item.style.display = 'block';
-  });
-};
-
 const adicionarBotaoPreencherHoras = () => {
-  const mestreFrame = document.querySelector('[name=MESTRE]');
+  // const mestreFrame = document.querySelector('[name=MESTRE]');
 
-  console.log(1113);
+  console.log(1112, document);
   // const timer = setInterval(() => {
   //   const dadosAcertoFrame =
   //     mestreFrame.contentDocument.querySelector('[name=DADOSACERTO]');
@@ -43,19 +10,25 @@ const adicionarBotaoPreencherHoras = () => {
   //     dadosAcertoFrame.contentDocument.onreadystatechange = function () {
   //       console.log(1113, dadosAcertoFrame.contentDocument.readyState);
   //     };
-  //     const botoesFrame =
-  //       dadosAcertoFrame.contentDocument.querySelector('[name=BOTOES]');
+  const botoesFrame = document.querySelector('[name=BOTOES]');
 
-  //     console.log(1114);
-  //     const tabelaBotoes =
-  //       botoesFrame.contentDocument.querySelector('.TABELABOTOES5');
-  //     console.log(1114, tabelaBotoes);
-  //   }
+  console.log(1114);
+  const linhaBotoes = botoesFrame.contentDocument.querySelector(
+    '.TABELABOTOES5 tbody tr'
+  );
+
+  const botoes = linhaBotoes.querySelectorAll('td');
+
+  const td = document.createElement('td');
+  const newContent = document.createTextNode('Preencher horas');
+  td.appendChild(newContent);
+
+  linhaBotoes.insertBefore(td, botoes[0]);
   // }, 500);
 };
 
 function iniciarScripts() {
-  console.log(1111, 'iniciar scripts');
+  console.log(1111, 'iniciar scripts horas');
 
   // const mestreFrame = document.querySelector('[name=MESTRE]');
   // if (!mestreFrame) return;
@@ -67,7 +40,6 @@ function iniciarScripts() {
   //   console.log(1113, dadosAcertoFrame.contentDocument.readyState);
   // };
 
-  abrirArvoreMenuLateral();
   adicionarBotaoPreencherHoras();
 }
 
