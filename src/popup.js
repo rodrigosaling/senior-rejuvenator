@@ -27,6 +27,10 @@
 
 // =======================
 
+function getRandomInt(max) {
+  return ;
+}
+
 function fillInputsWithDateAndTime() {
   const mestreFrame = document.querySelector('[name=MESTRE]');
   const dadosAcertoFrame =
@@ -51,10 +55,15 @@ function fillInputsWithDateAndTime() {
   const reasonInputs =
     dadosFrame.contentDocument.querySelectorAll('#CAMJUSMARCACAO');
 
+  const MAX_VALUE = 10
+  const randomizedNumber = Math.floor(Math.random() * MAX_VALUE)
+
   for (let i = 0; i < 4; i += 1) {
+    const slicedHour = hours[i].slice(0, -1); // removes last character from string
+
     dateInputs[i].value = date;
     dateInputs[i].dispatchEvent(new Event('blur'));
-    timeInputs[i].value = hours[i];
+    timeInputs[i].value = slicedHour + randomizedNumber.toString();
     timeInputs[i].dispatchEvent(new Event('blur'));
     reasonInputs[i].value = '2';
     reasonInputs[i].dispatchEvent(new Event('blur'));
